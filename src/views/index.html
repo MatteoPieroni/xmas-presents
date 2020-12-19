@@ -9,7 +9,8 @@
 	<body>
 		<div class="message-box">
 			<h1 id="welcome-message"></h1>
-			<a href="/private">Go to private area</a>
+			<p>Vuoi vedere il tuo regalo?</p>
+			<a href="/quiz-question-1">Comincia il quiz</a>
 		</div>
 
 		<script>
@@ -20,7 +21,7 @@
 					document.getElementById("welcome-message").innerText = `Welcome ${user.username}!!`;
 				}
 			};
-			req.open("GET", "http://localhost:3000/user", true);
+			req.open("GET", "/user", true);
 			req.send();
 		</script>
 	</body>
