@@ -1,25 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quante volte Thorundor ha rotto le palle? - Domanda 2 del Quiz</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-  <div class="message-box">
+  <main>
     <form action="/question-2" method="POST">
       <h1 id="question">Quante volte Thorundor ha rotto le palle?</h1>
+      <div id="error-message" class="error-message" role="alert"></div>
       <fieldset aria-labelledby="question">
-        <label for="answer-1">Nessuna, e' sempre stato molto utile</label>
-        <input type="radio" value="0" id="answer-1" name="question-2" />
-        <label for="answer-2">1 volta, quando non ci ha invitati dalla dama</label>
-        <input type="radio" value="1" id="answer-2" name="question-2" />
-        <label for="answer-3">Inenarrabili, come le bischerate che dice...</label>
-        <input type="radio" value="100" id="answer-3" name="question-2" />
+        <div class="answer">
+          <input class="visually-hidden" type="radio" value="0" id="answer-1" name="question-2" />
+          <label for="answer-1">Nessuna, e' sempre stato molto utile</label>
+        </div>
+        <div class="answer">
+          <input class="visually-hidden" type="radio" value="1" id="answer-2" name="question-2" />
+          <label for="answer-2">1 volta, quando non ci ha invitati dalla dama</label>
+        </div>
+        <div class="answer">
+          <input class="visually-hidden" type="radio" value="100" id="answer-3" name="question-2" />
+          <label for="answer-3">Inenarrabili, come le bischerate che dice...</label>
+        </div>
       </fieldset>
       <input type="submit" value="Conferma" />
     </form>
     <a href="/quiz-question-1">Go back</a>
-  </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const error = urlParams.get('error');
+  
+      if (error) {
+        setTimeout(function() {
+          const errorMessage = document.getElementById("error-message");
+          errorMessage.innerText = 'Risposta sbagliata. Tenta di nuovo...';
+          errorMessage.style.display = "block";
+        }, 1000);
+      }
+    </script>
+  </main>
 </body>
 </html>	

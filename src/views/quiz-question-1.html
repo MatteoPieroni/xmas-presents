@@ -1,25 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Di che colore sono i capelli di Elendaria? - Domanda 1 del Quiz</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-  <div class="message-box">
+  <main>
     <form action="/question-1" method="POST">
       <h1 id="question">Di che colore sono i capelli di Elendaria?</h1>
+      <div id="error-message" class="error-message" role="alert"></div>
       <fieldset aria-labelledby="question">
-        <label for="answer-1">Rossi</label>
-        <input type="radio" value="rossi" id="answer-1" name="question-1" />
-        <label for="answer-2">Castani</label>
-        <input type="radio" value="castani" id="answer-2" name="question-1" />
-        <label for="answer-3">Biondi</label>
-        <input type="radio" value="biondi" id="answer-3" name="question-1" />
+        <div class="answer">
+          <input class="visually-hidden" type="radio" value="rossi" id="answer-1" name="question-1" />
+          <label for="answer-1">Rossi</label>
+        </div>
+        <div class="answer">
+          <input class="visually-hidden" type="radio" value="castani" id="answer-2" name="question-1" />
+          <label for="answer-2">Castani</label>
+        </div>
+        <div class="answer">
+          <input class="visually-hidden" type="radio" value="biondi" id="answer-3" name="question-1" />
+          <label for="answer-3">Biondi</label>
+        </div>
       </fieldset>
       <input type="submit" value="Conferma" />
     </form>
     <a href="/">Go back</a>
-  </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const error = urlParams.get('error');
+  
+      if (error) {
+        setTimeout(function() {
+          const errorMessage = document.getElementById("error-message");
+          errorMessage.innerText = 'Risposta sbagliata. Tenta di nuovo...';
+          errorMessage.style.display = "block";
+        }, 1000);
+      }
+    </script>
+  </main>
 </body>
 </html>	

@@ -1,25 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Come si chiamavano i due viaggiatori soccorsi dai nostri compagni? - Domanda 4 del Quiz</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-  <div class="message-box">
+  <main>
     <form action="/question-4" method="POST">
       <h1 id="question">Come si chiamavano i due viaggiatori soccorsi dai nostri compagni?</h1>
+      <div id="error-message" class="error-message" role="alert"></div>
       <fieldset aria-labelledby="question">
-        <label for="answer-1">Belgo e il piccolo Baldor (detto il depresso)</label>
-        <input type="radio" value="belgo-baldor" id="answer-1" name="question-4" />
-        <label for="answer-2">Baldor e il piccolo Belgo (detto il depresso)</label>
-        <input type="radio" value="baldor-belgo" id="answer-2" name="question-4" />
-        <label for="answer-3">Legolas e il piccolo Gimli</label>
-        <input type="radio" value="legolas-gimli" id="answer-3" name="question-4" />
+        <div class="answer">
+          <input class="visually-hidden" type="radio" value="belgo-baldor" id="answer-1" name="question-4" />
+          <label for="answer-1">Belgo e il piccolo Baldor (detto il depresso)</label>
+        </div>
+        <div class="answer">
+          <input class="visually-hidden" type="radio" value="baldor-belgo" id="answer-2" name="question-4" />
+          <label for="answer-2">Baldor e il piccolo Belgo (detto il depresso)</label>
+        </div>
+        <div class="answer">
+          <input class="visually-hidden" type="radio" value="legolas-gimli" id="answer-3" name="question-4" />
+          <label for="answer-3">Legolas e il piccolo Gimli</label>
+        </div>
       </fieldset>
       <input type="submit" value="Conferma" />
     </form>
     <a href="/quiz-question-2">Go back</a>
-  </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const error = urlParams.get('error');
+  
+      if (error) {
+        setTimeout(function() {
+          const errorMessage = document.getElementById("error-message");
+          errorMessage.innerText = 'Risposta sbagliata. Tenta di nuovo...';
+          errorMessage.style.display = "block";
+        }, 1000);
+      }
+    </script>
+  </main>
 </body>
 </html>	

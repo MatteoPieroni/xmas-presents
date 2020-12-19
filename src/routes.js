@@ -68,7 +68,7 @@ const setUpRoutes = (app) => {
 			console.log({ body: req.body })
 			
 			if (answer !== constants.answer1) {
-				return res.redirect('quiz-question-1');
+				return res.redirect('quiz-question-1?error=true');
 			}
 			
 			req.session['question-1'] = answer;
@@ -83,7 +83,7 @@ const setUpRoutes = (app) => {
 			const answer = req.body['question-2'];
 			
 			if (answer !== constants.answer2) {
-				return res.redirect('quiz-question-2');
+				return res.redirect('quiz-question-2?error=true');
 			}
 			
 			req.session['question-2'] = answer;
@@ -98,7 +98,7 @@ const setUpRoutes = (app) => {
 			const answer = req.body['question-3'];
 			
 			if (answer !== constants.answer3) {
-				return res.redirect('quiz-question-3');
+				return res.redirect('quiz-question-3?error=true');
 			}
 			
 			req.session['question-3'] = answer;
@@ -113,7 +113,7 @@ const setUpRoutes = (app) => {
 			const answer = req.body['question-4'];
 			
 			if (answer !== constants.answer4) {
-				return res.redirect('quiz-question-4');
+				return res.redirect('quiz-question-4?error=true');
 			}
 			
 			req.session['question-4'] = answer;

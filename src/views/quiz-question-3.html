@@ -1,25 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dove la compagnia ha incontrato per la prima volta il nano Frier? - Domanda 3 del Quiz</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-  <div class="message-box">
+  <main>
     <form action="/question-3" method="POST">
       <h1 id="question">Dove la compagnia ha incontrato per la prima volta il nano Frier?</h1>
+      <div id="error-message" class="error-message" role="alert"></div>
       <fieldset aria-labelledby="question">
-        <label for="answer-1">Alla casa di Beorn</label>
-        <input type="radio" value="casa-beorn" id="answer-1" name="question-3" />
-        <label for="answer-2">Alla taverna di Dodinas</label>
-        <input type="radio" value="taverna" id="answer-2" name="question-3" />
-        <label for="answer-3">Lottando contro uno degli spettri</label>
-        <input type="radio" value="spettri" id="answer-3" name="question-3" />
+        <div class="answer">
+          <input class="visually-hidden" type="radio" value="casa-beorn" id="answer-1" name="question-3" />
+          <label for="answer-1">Alla casa di Beorn</label>
+        </div>
+        <div class="answer">
+          <input class="visually-hidden" type="radio" value="taverna" id="answer-2" name="question-3" />
+          <label for="answer-2">Alla taverna di Dodinas</label>
+        </div>
+        <div class="answer">
+          <input class="visually-hidden" type="radio" value="spettri" id="answer-3" name="question-3" />
+          <label for="answer-3">Lottando contro uno degli spettri</label>
+        </div>
       </fieldset>
       <input type="submit" value="Conferma" />
     </form>
     <a href="/quiz-question-2">Go back</a>
-  </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const error = urlParams.get('error');
+  
+      if (error) {
+        setTimeout(function() {
+          const errorMessage = document.getElementById("error-message");
+          errorMessage.innerText = 'Risposta sbagliata. Tenta di nuovo...';
+          errorMessage.style.display = "block";
+        }, 1000);
+      }
+    </script>
+  </main>
 </body>
 </html>	
