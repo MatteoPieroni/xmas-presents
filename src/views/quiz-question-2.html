@@ -8,14 +8,14 @@
 </head>
 
 <body>
-  <main>
+  <main class="quiz-indicator quiz-indicator-2">
     <form action="/question-2" method="POST">
-      <h1 id="question">Quante volte Thorundor ha rotto le palle?</h1>
+      <h1 class="question-title" id="question">Quante volte Thorundor ha rotto le palle?</h1>
       <div id="error-message" class="error-message" role="alert"></div>
       <fieldset aria-labelledby="question">
         <div class="answer">
           <input class="visually-hidden" type="radio" value="0" id="answer-1" name="question-2" />
-          <label for="answer-1">Nessuna, e' sempre stato molto utile</label>
+          <label for="answer-1">Nessuna, è sempre stato molto utile</label>
         </div>
         <div class="answer">
           <input class="visually-hidden" type="radio" value="1" id="answer-2" name="question-2" />
@@ -26,9 +26,9 @@
           <label for="answer-3">Inenarrabili, come le bischerate che dice...</label>
         </div>
       </fieldset>
-      <input type="submit" value="Conferma" />
+      <input class="submit-answer" type="submit" value="Conferma" />
     </form>
-    <a href="/quiz-question-1">Go back</a>
+    <a href="/quiz-question-1" class="logout">Torna indietro</a>
 
     <script>
       const urlParams = new URLSearchParams(window.location.search);

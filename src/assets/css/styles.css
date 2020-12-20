@@ -10,9 +10,12 @@
 }
 
 body {
-  background: var(--background);
+  min-height: 100vh;
+  background-image: url(http://localhost:3001/assets/images/86-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: var(--color);
-  text-align: center;
   font-family: 'Fira Sans Extra Condensed', sans-serif;
 }
 
@@ -29,7 +32,6 @@ body {
 h1 {
   font-family: 'Archivo Black', sans-serif;
   font-weight: unset;
-  text-align: center;
 }
 
 a {
@@ -38,6 +40,7 @@ a {
 
 input {
   font-family: 'Fira Sans Extra Condensed', sans-serif;
+  box-sizing: border-box;
 }
 
 img {
@@ -48,8 +51,10 @@ img {
 
 main {
   display: block;
-  margin: 0 auto;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
   max-width: 600px;
+  background: var(--background);
 }
 
 .welcome-message {
@@ -150,7 +155,6 @@ input[type='radio']:checked + label:after {
 .btn,
 input[type='submit'] {
   display: block;
-  margin-left: 1rem;
   border: none;
   border-radius: 5px;
   padding: 0.5rem 1rem;
@@ -158,6 +162,7 @@ input[type='submit'] {
   color: var(--color-contrasted);
   text-decoration: none;
   font-size: 1.25rem;
+  text-align: center;
 }
 
 .btn:hover,
@@ -172,12 +177,27 @@ input[type='submit']:focus {
   outline: 3px solid black;
 }
 
+.question-title {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.submit-answer {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .login {
   text-align: left;
 }
 
+.login h1 {
+  text-align: center;
+}
+
 @media (min-width: 1024px) {
   .login main {
+    padding: 4rem;
     max-width: 250px;
   }
 }
@@ -188,4 +208,46 @@ input[type='submit']:focus {
   border: none;
   padding: 0.25rem;
   width: 100%;
+}
+
+.logout {
+  display: block;
+  margin: 2rem 0 0;
+  text-align: center;
+}
+
+.quiz-indicator {
+  position: relative;
+  border-top: 7px solid #96905d;
+}
+
+.quiz-indicator:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -7px;
+  width: 0;
+  height: 7px;
+  background: var(--background-selected);
+}
+
+.quiz-indicator-1::before {
+  width: 25%;
+}
+.quiz-indicator-2::before {
+  width: 50%;
+}
+.quiz-indicator-3::before {
+  width: 75%;
+}
+.quiz-indicator-4::before {
+  width: 100%;
+}
+
+.home {
+  text-align: center;
+}
+
+.success {
+  text-align: center;
 }

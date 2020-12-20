@@ -8,9 +8,9 @@
 </head>
 
 <body>
-  <main>
+  <main class="quiz-indicator quiz-indicator-4">
     <form action="/question-4" method="POST">
-      <h1 id="question">Come si chiamavano i due viaggiatori soccorsi dai nostri compagni?</h1>
+      <h1 class="question-title" id="question">Come si chiamavano i due viaggiatori soccorsi dai nostri compagni?</h1>
       <div id="error-message" class="error-message" role="alert"></div>
       <fieldset aria-labelledby="question">
         <div class="answer">
@@ -26,9 +26,9 @@
           <label for="answer-3">Legolas e il piccolo Gimli</label>
         </div>
       </fieldset>
-      <input type="submit" value="Conferma" />
+      <input class="submit-answer" type="submit" value="Conferma" />
     </form>
-    <a href="/quiz-question-2">Go back</a>
+    <a href="/quiz-question-2" class="logout">Torna indietro</a>
 
     <script>
       const urlParams = new URLSearchParams(window.location.search);

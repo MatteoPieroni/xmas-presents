@@ -8,9 +8,9 @@
 </head>
 
 <body>
-  <main>
+  <main class="quiz-indicator quiz-indicator-1">
     <form action="/question-1" method="POST">
-      <h1 id="question">Di che colore sono i capelli di Elendaria?</h1>
+      <h1 class="question-title" id="question">Di che colore sono i capelli di Elendaria?</h1>
       <div id="error-message" class="error-message" role="alert"></div>
       <fieldset aria-labelledby="question">
         <div class="answer">
@@ -26,9 +26,9 @@
           <label for="answer-3">Biondi</label>
         </div>
       </fieldset>
-      <input type="submit" value="Conferma" />
+      <input class="submit-answer" type="submit" value="Conferma" />
     </form>
-    <a href="/">Go back</a>
+    <a href="/" class="logout">Torna indietro</a>
 
     <script>
       const urlParams = new URLSearchParams(window.location.search);
