@@ -9,9 +9,10 @@
 
 	<body>
 		<main>
-			<h1 id="welcome-message"></h1>
+			<h1>Ciao <span id="welcome-message" class="welcome-message"></span>!</h1>
 			<p>Vuoi vedere il tuo regalo?</p>
-			<a href="/quiz-question-1">Comincia il quiz</a>
+			<a class="btn" href="/quiz-question-1">Comincia il quiz</a>
+			<a href="/logout">Esci</a>
 		</main>
 
 		<script>
@@ -19,7 +20,7 @@
 			req.onreadystatechange = function () {
 				if (req.readyState == 4 && req.status == 200) {
 					const user = JSON.parse(req.response).user;
-					document.getElementById("welcome-message").innerText = `Welcome ${user.username}!!`;
+					document.getElementById("welcome-message").innerText = user.username;
 				}
 			};
 			req.open("GET", "/user", true);

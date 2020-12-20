@@ -30,6 +30,14 @@ const setUpRoutes = (app) => {
 		{ root: __dirname })
 	);
 
+	app.get('/logout',
+		connectEnsureLogin.ensureLoggedIn(),
+		(req, res) => {
+			req.logout();
+			res.redirect('/');
+		},
+	);
+
 	app.get('/',
 		connectEnsureLogin.ensureLoggedIn(),
 		(req, res) => res.sendFile('views/index.html', {root: __dirname})

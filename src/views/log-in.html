@@ -7,25 +7,30 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body>
-  <form action="/login" method="post">
-    <div class="title">
-      <h3>Login</h3>
-    </div>
-    <div class="field">
-      <label>Username:</label>
-      <input type="text" name="username" />
-      <br />
-    </div>
-    <div class="field">
-      <label>Password:</label>
-      <input type="password" name="password" required />
-    </div>
-    <div class="field">
-      <input class="submit-btn" type="submit" value="Submit" required />
-    </div>
-    <label id="error-message"></label>
-  </form>
+<body class="login">
+  <main>
+    <form action="/login" method="post">
+      <div class="title">
+        <h1>Login</h1>
+      </div>
+      <label id="error-message"></label>
+      <div class="field">
+        <label>
+          Username:
+          <input type="text" name="username" required />
+        </label>
+      </div>
+      <div class="field">
+        <label>
+          Password:
+          <input type="password" name="password" required />
+        </label>
+      </div>
+      <div class="field">
+        <input class="submit-btn" type="submit" value="Entra" required />
+      </div>
+    </form>
+  </main>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
